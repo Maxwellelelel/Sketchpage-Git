@@ -1,36 +1,59 @@
-var canvas = document.getElementById("canvasId");
-var ctx = canvas.getContext("2d");
+var canvas = document.getElementById('canvasId');
+var ctx = canvas.getContext('2d');
+
 var sideMenu = document.getElementById('sidemenuId');
- 
 var sidemenuVisible = false;
-var mouseX = 0;
-var mouseY = 0;
- 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight - 64;
- 
-sideMenu.style.height = (window.innerHeight - 64) + "px";
- 
-console.log("Width: " + sideMenu.style.height);
- 
-window.addEventListener('resize', function() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight - 64;
- 
-    sideMenu.style.height = (window.innerHeight - 64) + "px";
-})
- 
-canvas.addEventListener('onmousedown', function(event) {
-    ctx.fillStyle = "#FF0000";
- 
-    console.log("X: " + event.clientX);
-    console.log("Y: " + event.clientY);
- 
-    ctx.fillRect(event.clientX, event.clientY, 10, 10);
-})
- 
+
+var coord = {x:0, y:0}; 
+var paint = false;
+
+resize();
+
+document.addEventListener('mousedown', startPainting);
+document.addEventListener('mouseup', stopPainting);
+document.addEventListener('mousemove', sketch);
+window.addEventListener('resize', resize);
+
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight - 64;
+
+  sideMenu.style.height = window.innerHeight - 64 + "px";
+}
+
+function getPosition(event) {
+  coord.x = event.clientX - canvas.offsetLeft;
+  coord.y = event.clientY - canvas.offsetTop;
+}
+
+function startPainting(event) {
+  paint = true;
+
+  getPosition(event);
+}
+
+function stopPainting() {
+  paint = false;
+}
+    
+function sketch(event) {
+  if (!paint) return;
+
+  ctx.beginPath();
+
+  ctx.lineWidth = 5;
+  ctx.lineCap = 'round';
+  ctx.strokeStyle = 'black';
+
+  ctx.moveTo(coord.x, coord.y);
+
+  getPosition(event);
+   
+  ctx.lineTo(coord.x , coord.y);
+  ctx.stroke();
+}
+
 function changeMenu(obj) {
- 
     obj.classList.toggle("change");
  
     if(sidemenuVisible) {
@@ -43,5 +66,4 @@ function changeMenu(obj) {
     }
    
     sideMenu.style.transition = "0.3s";
- 
 }
