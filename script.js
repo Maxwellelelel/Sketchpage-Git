@@ -37,7 +37,7 @@ function stopPainting() {
 }
     
 function sketch(event) {
-  if (!paint) return;
+  if (!paint || sidemenuVisible) return;
 
   ctx.beginPath();
 
@@ -57,13 +57,16 @@ function changeMenu(obj) {
     obj.classList.toggle("change");
  
     if(sidemenuVisible) {
-        sideMenu.style.left = "-248px";
+        sideMenu.style.left = "-230px";
         sidemenuVisible = false;
+        canvas.style.opacity = "1.0";
  
     } else {
         sideMenu.style.left = "0px";
         sidemenuVisible = true;
+        canvas.style.opacity = "0.3";
     }
    
     sideMenu.style.transition = "0.3s";
+    canvas.style.transition = "0.3s";
 }

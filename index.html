@@ -10,8 +10,15 @@
         <div id="mainId">
             <div id="navigationId">
                 <div class="sidemenu" id="sidemenuId">
-                  <label for="colorpicker">Color Picker:</label>
-                  <input type="color" id="colorpicker" value="#0000ff">
+                    <h1> Pencil Options: </h1>
+                    <div class="colorpicker" id="colorpickerId">
+                      <label for="colorpicker"> Color: </label>
+                      <input type="color" value="#000000" id="colorpicker">
+                    </div>
+                    <div class="widthpicker" id="widthpickerId">
+                        <label for="lineWidth"> Width: </label>
+                        <input type="range" min="1" max="500" value="1" id="lineWidth">
+                    </div>
                 </div>
                 <div class="topnav" id="topnavId">
                     <div class="container" onclick="changeMenu(this)">
