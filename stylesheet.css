@@ -35,12 +35,11 @@ canvas {
     margin: 0;
     color: rgb(255, 255, 255);
     cursor: pointer;
-    letter-spacing: 0.1cm;
     transition: 0.3s;
 }
  
 .topnav a:hover {
-    color: rgb(8, 185, 126);
+    color: rgb(156, 156, 156);
     transition: 0.3s;
 }
  
@@ -97,4 +96,46 @@ canvas {
 .sidemenu .widthpicker {
     padding-top: 8px;
     padding-left: 13px;
+}
+
+.uploadcon {
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    top: -256px;
+    width: 512px;
+    height: 256px;
+    border-radius: 15px;
+    background-color: rgb(242, 242, 242);
+}
+
+.uploadcon p {
+    margin-top: 18px;
+    margin-left: 21px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.uploadcon .separator {
+    position: absolute;
+    background-color: rgb(73, 73, 73);
+    left: 22px;
+    width: 468px;
+    height: 1px;
+}
+
+.uploadcon .imageUpload {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.uploadcon button {
+    float: right;
+    margin-right: 12px;
+    margin-top: 172px;
 }

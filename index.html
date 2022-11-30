@@ -17,7 +17,7 @@
                     </div>
                     <div class="widthpicker" id="widthpickerId">
                         <label for="lineWidth"> Width: </label>
-                        <input type="range" min="1" max="500" value="1" id="lineWidth">
+                        <input type="range" min="1" max="100" value="1" id="lineWidth">
                     </div>
                 </div>
                 <div class="topnav" id="topnavId">
@@ -26,13 +26,22 @@
                         <div class="bar2"></div>
                         <div class="bar3"></div>
                     </div>
-                    <a> REFRESH </a>
-                    <a> SAVE </a>
-                    <a> DOWNLOAD </a>
+                    <a onclick="clearCanvas()"> CLEAR </a>
+                    <a onclick="showUploadcon()"> UPLOAD </a>
+                    <a onclick="downloadCanvas()"> DOWNLOAD </a>
                 </div>
             </div>
             <div id="contentId">
                 <canvas id="canvasId"></canvas>
+                <div class="uploadcon" id="uploadconId">
+                    <p> Upload Image </p>
+                    <div class="separator" id="separatorId"></div>
+                    <div class="imageUpload" id="imageInputId">
+                      <input type="file" id="imageInput" accept="image/*">
+                    </div>
+                    <button onclick="hideUploadcon()"> Cancel </button>
+                    <button onclick="applyImage()"> Apply </button>
+                </div>
             </div>
         </div>
         <script src="script.js"></script>
