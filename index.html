@@ -10,37 +10,56 @@
         <div id="mainId">
             <div id="navigationId">
                 <div class="sidemenu" id="sidemenuId">
-                    <h1> Pencil Options: </h1>
+                    <div>
+                      <h1> Pencil Options: </h1>
+                    </div>
                     <div class="colorpicker" id="colorpickerId">
                       <label for="colorpicker"> Color: </label>
                       <input type="color" value="#000000" id="colorpicker">
                     </div>
                     <div class="widthpicker" id="widthpickerId">
-                        <label for="lineWidth"> Width: </label>
-                        <input type="range" min="1" max="100" value="1" id="lineWidth">
+                      <label for="lineWidth"> Width: </label>
+                      <input type="range" min="1" max="100" value="1" id="lineWidth">
+                    </div>
+                    <div>
+                      <h1> Canvas Options: </h1>
+                    </div>
+                    <div class="canvasWidthDiv" id="canvasWidthDivId">
+                      <label for="canvasWidth"> Width: </label>
+                      <input type="text" maxlength="4" size="4" id="canvasWidth">
+                    </div>
+                    <div class="canvasHeightDiv" id="canvasHeightDivId">
+                      <label for="canvasHeight"> Height: </label>
+                      <input type="text" maxlength="4" size="4" id="canvasHeight">
                     </div>
                 </div>
                 <div class="topnav" id="topnavId">
                     <div class="container" onclick="changeMenu(this)">
-                        <div class="bar1"></div>
-                        <div class="bar2"></div>
-                        <div class="bar3"></div>
+                      <div class="bar1"></div>
+                      <div class="bar2"></div>
+                      <div class="bar3"></div>
                     </div>
-                    <a onclick="clearCanvas()"> CLEAR </a>
-                    <a onclick="showUploadcon()"> UPLOAD </a>
-                    <a onclick="downloadCanvas()"> DOWNLOAD </a>
+                    <div>
+                      <a onclick="clearCanvas()"> CLEAR </a>
+                      <a onclick="showUploadcon()"> UPLOAD </a>
+                      <a onclick="downloadCanvas()"> DOWNLOAD </a>
+                    </div>
                 </div>
             </div>
             <div id="contentId">
                 <canvas id="canvasId"></canvas>
                 <div class="uploadcon" id="uploadconId">
-                    <p> Upload Image </p>
+                    <div>
+                      <p> Upload Image </p>
+                    </div>
                     <div class="separator" id="separatorId"></div>
                     <div class="imageUpload" id="imageInputId">
-                      <input type="file" id="imageInput" accept="image/*">
+                      <input type="file" id="imageInput" accept="image/jpeg, image/png, image/jpg">
                     </div>
-                    <button onclick="hideUploadcon()"> Cancel </button>
-                    <button onclick="applyImage()"> Apply </button>
+                    <div>
+                      <button onclick="hideUploadcon()"> Cancel </button>
+                      <button onclick="applyImage()"> Apply </button>
+                    </div>
                 </div>
             </div>
         </div>
